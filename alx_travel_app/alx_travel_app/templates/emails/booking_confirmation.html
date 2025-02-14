@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Airbnb Reservation Confirmation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+    }
+    .email-card {
+      width: 90%;
+      max-width: 400px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    .email-card .logo {
+      text-align: left;
+      padding: 20px;
+      font-size: 22px;
+      color: #FF5A5F;
+      font-weight: 600;
+    }
+    .email-card .title {
+      font-size: 24px;
+      margin: 0;
+      padding: 0 20px;
+      text-align: left;
+      color: #333;
+    }
+    .email-card .subtitle {
+      font-size: 16px;
+      color: #666;
+      text-align: left;
+      padding: 5px 20px 20px;
+    }
+    .email-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .email-card .description {
+      text-align: left;
+      padding: 20px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .email-card .dates {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      color: #333;
+      font-size: 14px;
+    }
+    .email-card .dates div {
+      width: 45%;
+    }
+    .email-card .button {
+      background-color: #FF5A5F;
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 15px;
+      text-align: center;
+      font-weight: 600;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      transition: background-color 0.3s;
+    }
+    .email-card .button:hover {
+      background-color: #e0484d;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-card">
+    <div class="logo">airbnb</div>
+    <h1 class="title">Your reservation for {{ listing_title }} is confirmed</h1>
+    <p class="subtitle">Booking ID: {{ booking_id }}</p>
+    <img src="https://via.placeholder.com/400x220" alt="Room Image">
+    <div class="description">
+      <strong>Superhosted Castro Studio. Easy Parking. No Keys.</strong><br>
+      Entire home/apt hosted by Christian.
+    </div>
+    <div class="dates">
+      <div>
+        <strong>Tuesday, Oct 24, 2017</strong><br>
+        Check-in anytime after 3PM
+      </div>
+      <div>
+        <strong>Friday, Oct 27, 2017</strong><br>
+        Check-out 11AM
+      </div>
+    </div>
+    <a href="#" class="button">View Full Itinerary</a>
+  </div>
+</body>
+</html>

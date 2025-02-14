@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Airbnb Reservation Confirmation</title>
+  <style>
+    /* Reset styles for email clients */
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100% !important;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Main container */
+    .email-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #f7f7f7;
+      text-align: center;
+    }
+    
+    .email-card {
+      width: 100%;
+      background-color: #fff;
+      margin: 0 auto;
+      padding: 20px 0;
+      text-align: left;
+    }
+    
+    .logo {
+      padding: 20px;
+      font-size: 22px;
+      color: #FF5A5F;
+      font-weight: bold;
+      text-align: center;
+    }
+    
+    .title {
+      font-size: 24px;
+      margin: 0;
+      padding: 0 20px;
+      color: #333;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      color: #666;
+      padding: 5px 20px 20px;
+      margin: 0;
+    }
+    
+    img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+    }
+    
+    .description {
+      padding: 20px;
+      color: #333;
+      line-height: 1.5;
+    }
+    
+    .dates {
+      padding: 20px;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      color: #333;
+      font-size: 14px;
+    }
+    
+    .dates-container {
+      width: 100%;
+      display: table;
+    }
+    
+    .date-column {
+      display: table-cell;
+      width: 50%;
+      padding: 10px;
+    }
+    
+    .button {
+      background-color: #FF5A5F;
+      color: #ffffff !important;
+      text-decoration: none;
+      display: block;
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      margin: 20px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="email-card">
+      <div class="logo">ALX airbnb clone</div>
+      <h1 class="title">Your reservation for {{ listing_title }} is confirmed</h1>
+      <p class="subtitle">Booking ID: {{ booking_id }}</p>
+      <img src="https://via.placeholder.com/600x300" alt="Room Image">
+      <div class="description">
+        <strong>{{ listing_title }}</strong><br>
+        {% if guest_name %}Welcome, {{ guest_name }}!{% endif %}
+      </div>
+      <div class="dates">
+        <div class="dates-container">
+          <div class="date-column">
+            <strong>{{ check_in_date }}</strong><br>
+            Check-in anytime after 3PM
+          </div>
+          <div class="date-column">
+            <strong>{{ check_out_date }}</strong><br>
+            Check-out 11AM
+          </div>
+        </div>
+      </div>
+      <a href="#" class="button">View Full Itinerary</a>
+    </div>
+  </div>
+</body>
+</html>
